@@ -429,3 +429,52 @@ class  Post extends Component {
                     </div>
                     
                 </div>
+
+                 {/*comment box*/}
+                {/* <div className="upload_comment">
+                <div className="upload_top">
+                <div>
+                    <Avatar src={JSON.parse(localStorage.getItem("user")).userImage} className="upload_img"/>
+                </div>
+                <div>
+                {
+                                    this.state.commentList.map((item, index) => (
+                                        index < 4 ?
+                                            <div className="post_comment" key={item.commentId}><img className="post_img" src={item.userImage}/> {item.userName}  {item.comment}</div> : <span key={item.commentId}></span>
+                                    ))
+                                }
+                                <input className="upload_box" onKeyPress={this.submitComments} placeholder="what's on your mind?" type="text" />
+                            </div> */}
+                            <div className="upload_comment">
+                <div className="upload_top">
+                <div>
+                    
+                </div>
+                <div>
+                {
+                                    this.state.commentList.map((item, index) => (
+                                        index < 4 ?
+                                            <div className="post_comment" key={item.commentId}>
+                                                <img className="post_img" src={item.userImage}/>
+                                               
+                                                <div className="comment_user"> {item.userName} </div> 
+                                                <div className="comment"> {item.comment}</div> 
+                                              
+                                                
+                                            </div> : <span key={item.commentId}></span>
+                                    ))
+                                }
+                                <div className="comment-box">
+                                <Avatar src={JSON.parse(localStorage.getItem("user")).userImage} className="upload_img"/>
+                                <input className="upload_box" onKeyPress={this.submitComments} placeholder="what's on your mind?" type="text" />
+                                </div>
+                </div>
+            </div>
+                </div>
+                </Paper>
+            
+        </div>  );
+    }
+}
+ 
+export default Post;
