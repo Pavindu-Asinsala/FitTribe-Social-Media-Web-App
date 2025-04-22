@@ -256,3 +256,176 @@ class  Post extends Component {
                     </div>
                 )
                 )}
+
+                {/* Render caloric goals */}
+                {editMode ? (
+                    <div className="upload_caloricgoals_edit_mode">
+                        <select
+                            type="text"
+                            value={updatedcaloricgoals}
+                            onChange={(e) => this.setState({ updatedcaloricgoals: e.target.value })}
+                            className="upload_caloricgoals"
+                        >
+                        <option className="upload_caloricgoals" value="">Select Caloric Goals</option>
+                        <option className="upload_caloricgoals" value="less than 1500">less than 1500</option>
+                        <option className="upload_caloricgoals" value="1500-2000">1500-2000</option>
+                        <option className="upload_caloricgoals" value="2000-2500">2000-2500</option>
+                        <option className="upload_caloricgoals" value="2500-4000">2500-4000</option>
+                        <option className="upload_caloricgoals" value="more than 4000">more than 4000</option>
+                        </select>    
+                    </div>
+                ) : (
+                    this.props.object.caloricgoals && (
+                        <div className="post_caloricgoals">
+                            <div className="post_content">Caloric Goals: {this.props.object.caloricgoals}</div>
+                        </div>
+                    )
+                )}
+
+                {/* Render meal timing */}
+                {editMode ? (
+                    <div className="post_mealTiming_edit_mode">
+                        <select
+                            type="text"
+                            value={updatedmealTiming}
+                            onChange={(e) => this.setState({ updatedmealTiming: e.target.value })}
+                            className="post_mealTiming_input"
+                        >
+                                <option className="upload_mealTiming" value="">Select Meal Timing</option>
+                                <option className="upload_mealTiming" value="breakfast">Breakfast</option>
+                                <option className="upload_mealTiming" value="lunch">Lunch</option>
+                                <option className="upload_mealTiming" value="dinner">Dinner</option>
+                                <option className="upload_mealTiming" value="snack">Snack</option>
+                        </select>    
+                    </div>
+                ) : (
+                    this.props.object.mealTiming && (
+                        <div className="post_mealTiming">
+                            <div className="post_content">Meal Time: {this.props.object.mealTiming}</div>
+                        </div>
+                    )
+                )}
+
+                {/* Render portion size */}
+                {editMode ? (
+                    <div className="post_portionSize_edit_mode">
+                        <select
+                            type="text"
+                            value={updatedportionSize}
+                            onChange={(e) => this.setState({ updatedportionSize: e.target.value })}
+                            className="post_portionSize_input"
+                        >
+
+                                <option className="upload_portionSize" value="">Select Portion Size</option>
+                                <option className="upload_portionSize" value="small">Small</option>
+                                <option className="upload_portionSize" value="medium">Medium</option>
+                                <option className="upload_portionSize" value="large">Large</option>
+                                <option className="upload_portionSize" value="extra-large">Extra Large</option>
+                        </select>        
+                    </div>
+                ) : (
+                    this.props.object.portionSize && (
+                        <div className="post_portionSize">
+                            <div className="post_content">Portion Size: {this.props.object.portionSize}</div>
+                        </div>
+                    )
+                )}
+
+                {/* Render health goals */}
+                {editMode ? (
+                    <div className="post_healthGoals_edit_mode">
+                        <select
+                            type="text"
+                            value={updatedhealthGoals}
+                            onChange={(e) => this.setState({ updatedhealthGoals: e.target.value })}
+                            className="post_healthGoals_input"
+                        >
+                         <option className="upload_healthGoals" value="">Select Health Goals</option>
+                                <option className="upload_healthGoals" value="weight-loss">Weight Loss</option>
+                                <option className="upload_healthGoals" value="muscle-gain">Muscle Gain</option>
+                                <option className="upload_healthGoals" value="maintain-weight">Maintain Weight</option>
+                                <option className="upload_healthGoals" value="disease-management">Disease Management</option>
+                        </select>
+                    </div>
+                ) : (
+                    this.props.object.healthGoals && (
+                        <div className="post_healthGoals">
+                            <div className="post_content">Health Goals: {this.props.object.healthGoals}</div>
+                        </div>
+                    )
+                )}
+
+                {/* Render description */}
+                {editMode ? (
+                    <div className="post_description_edit_mode">
+                        <textarea
+                            value={updatedDescription}
+                            onChange={(e) => this.setState({ updatedDescription: e.target.value })}
+                            className="post_description_textarea"
+                        />
+                    </div>
+                ) : (
+                     
+                        <textarea
+                        className="mealplan_description"
+                        value={this.props.object.description}
+                        readOnly
+                    />
+                    
+                )}
+
+                {/*image*/}
+                <div className="post_image">
+                        {editMode ? (
+                            <input className="update-post-img"
+                                type="file"
+                                onChange={(e) => this.setState({ updatedmealpostImgURL: e.target.files[0] })}
+                                accept="image/*"
+                            />
+                        ) : (
+                            this.isImageAvailable(this.props.object.mealpostImgURL) && (
+                                <img src={this.props.object.mealpostImgURL} width="600px" alt="Post" />
+                            )
+                        )}
+                    </div>
+                    
+                
+                {/*like count*/}
+                <div className="post_likecountContainer">
+                    <div className="post_like">
+                        <img className="post_img" src={like}/>
+                    </div>
+                    <div className="post_likecount">
+                    {this.props.object.likes}
+                    </div>
+                </div>
+                {/*like share box*/}
+                <div className="post_likeshare">
+                    <div className="post_tab">
+                        <div className="post_tabfirst">
+                           <img className="post_tabing" src={likebutton}/>
+                        </div>
+                        <div className="post_tabtext">
+                        Like
+                        </div>
+                    </div>
+
+                    <div className="post_tab">
+                        <div className="post_tabfirst">
+                           <img className="post_tabing" src={comment}/>
+                        </div>
+                        <div className="post_tabtext">
+                        Comment
+                        </div>
+                    </div>
+
+                    <div className="post_tab">
+                        <div className="post_tabfirst">
+                           <img className="post_tabing" src={share}/>
+                        </div>
+                        <div className="post_tabtext">
+                        Share
+                        </div>
+                    </div>
+                    
+                </div>
