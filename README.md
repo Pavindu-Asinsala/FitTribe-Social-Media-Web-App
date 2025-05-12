@@ -1,16 +1,22 @@
 💪 FitTribe – Share Your Fitness Journey 📸🔥
 
-Welcome to FitTribe – a social media platform made for fitness lovers! 🏋️‍♀️🥗
+Excited to introduce FitTribe, our university PAF project — a social media platform built for fitness lovers! 🏋️‍♀️🥗
+From gym selfies to healthy meals, FitTribe is where fitness enthusiasts connect, share, and grow together.
 
-We're creating a space where you can post, like, comment, and share your fitness moments with a supportive community. Whether it’s gym selfies, progress shots, or healthy meals – your journey matters, and we’re here for it!🙌
+🚀 Core Features:
 
-🚀 Core Features (Current)
-📸 Post Pictures of your workouts, meals, and fitness life
-❤️ Like Posts from fellow fitness enthusiasts
-💬 Comment to support and engage with the community
-🔁 Share Posts to spread inspiration
+📸 Post your fitness moments
+❤️ Like & 💬 Comment on posts
+🔁 Share motivation
+✉️ Message others to build real connections
 
-🌟 Why FitTribe?
-Because fitness is better together. FitTribe is all about connecting with others who are on the same path – building each other up, one post at a time. 💯
+🎓 Developed for: SLIIT – 3rd Year | 2nd Semester | PAF Module
+
+👥 Team Members:
+Sasindu Diluranga
+Pavindu Asinsala Ranasinghe
+Venuja Bimsara
+Udana Rajanayake 
 
 Your journey. Your tribe. Your FitTribe. 🌍💥
+#SLIIT #PAFProject #FitTribe #FitnessApp #ReactNative #SocialMedia #Teamwork #StudentProject #GymLife #HealthyLiving
